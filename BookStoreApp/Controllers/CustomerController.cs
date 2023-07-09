@@ -112,7 +112,7 @@
         [ProducesResponseType(404)]
         public async Task<ActionResult> UpdateCustomer(int customerId, [FromBody] CustomerDto updateCustomer)
         {
-            if (UpdateCustomer == null)
+            if (updateCustomer == null)
             {
                 return BadRequest(ModelState);
             }

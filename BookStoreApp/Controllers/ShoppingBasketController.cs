@@ -104,7 +104,7 @@
         [ProducesResponseType(404)]
         public async Task<ActionResult> UpdateShoppingBasket(int shoppingBasketId, [FromQuery] int customerId, [FromBody] ShoppingBasketDto updateShoppingBasket)
         {
-            if (UpdateShoppingBasket == null)
+            if (updateShoppingBasket == null)
             {
                 return BadRequest(ModelState);
             }

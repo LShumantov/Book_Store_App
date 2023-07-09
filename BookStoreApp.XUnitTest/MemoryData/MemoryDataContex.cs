@@ -1,12 +1,8 @@
 ﻿namespace BookStoreApp.XUnitTest.MemoryData
 {
-    using FluentAssertions;
     using System;
     using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
-    using BookStoreApp.XUnitTest.MemoryData;
     using BookStoreApp.Data;
     using BookStoreApp.Models;
     using Microsoft.EntityFrameworkCore;
@@ -14,7 +10,6 @@
     public class MemoryDataContex : DbContext
     {
         public DataContex DataBaseContext { get; private set; }
-
 
         public async Task<DataContex> GetDatabaseContext()
         {

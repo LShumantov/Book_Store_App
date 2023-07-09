@@ -95,7 +95,7 @@
         public async Task<ActionResult> UpdateBook(int bookId, [FromQuery] int shoppingBaskeId, 
             [FromQuery] int wareHouseId, [FromQuery] int authorId, [FromBody] BookDto updateBook)
         {
-            if (UpdateBook == null)
+            if (updateBook == null)
             {
                 return BadRequest(ModelState);
             }

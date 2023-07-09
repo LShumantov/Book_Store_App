@@ -1,7 +1,6 @@
 ﻿namespace BookStoreApp.Interfaces
 {
     using BookStoreApp.Models;
-
     public interface ICustomerRepository
     {
         Task<ICollection<Customer>> GetCustomers();

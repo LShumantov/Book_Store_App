@@ -113,7 +113,7 @@
         [ProducesResponseType(404)]
         public async Task<ActionResult> UpdateAuthor( int authorId, [FromBody] AuthorDto updateAutor)
         {
-            if (UpdateAuthor == null )
+            if (updateAutor == null )
             {
                 return BadRequest(ModelState);
             }

@@ -100,7 +100,7 @@
         [ProducesResponseType(404)]
         public async Task<ActionResult> UpdateWareHouse(int wareHouseId, [FromBody] WareHouseDto updateWareHouse)
         {
-            if (UpdateWareHouse == null)
+            if (updateWareHouse == null)
             {
                 return BadRequest(ModelState);
             }

@@ -5,12 +5,10 @@
     public class Seed
     {
         private readonly DataContex dataContex;
-
         public Seed(DataContex contex)
         {
             this.dataContex = contex;
         }
-
         public void SeedDataContex()
         {       
             if (!dataContex.Authors.Any())
@@ -19,8 +17,8 @@
                 {
                       new Author
                       {                       
-                         Name = "Lyubomir Shumantov",
-                         Address = "Doiran 18",
+                       Name = "Lyubomir Shumantov",
+                       Address = "Doiran 18",
                        Books = new List<Book>()
                        {
                          new Book
@@ -51,9 +49,7 @@
                                             }
                                         }
                                    }
-                            },
-                            
-
+                            },                            
                          },
                          new Book
                          {

@@ -9,7 +9,6 @@
             : base(options)
         {
         }
-
         public DbSet<Author> Authors { get; set; }
         public DbSet<Book> Books { get; set; }
         public DbSet<Customer> Customers { get; set; }       
@@ -17,7 +16,6 @@
         public DbSet<ShoppingBasketBook> ShoppingBasketBooks { get; set; }
         public DbSet<WareHouse> WareHouses { get; set; }
         public DbSet<WareHouseBook> WareHouseBooks { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ShoppingBasketBook>()
