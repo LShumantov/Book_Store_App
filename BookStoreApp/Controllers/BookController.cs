@@ -133,12 +133,12 @@
         [ProducesResponseType(404)]
         public async Task<ActionResult> DeleteBook(int bookId)
         {
-            if (!await _bookRepository.BookExisting(bookId))
-            {
-                return NotFound();
-            }
             var authorToDelete = await _authorRepository.GetAuthorByBook(bookId);
             var bookToDelete = await _bookRepository.GetBook(bookId);
+            if (bookToDelete == null)
+            {
+                return NotFound();
+            }          
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

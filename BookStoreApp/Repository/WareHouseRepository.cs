@@ -31,7 +31,7 @@
         }
         public async Task<bool> CreateWareHouse(WareHouse wareHouse)
         {
-            _context.Add(wareHouse);
+            _context.AddAsync(wareHouse);
             await _context.SaveChangesAsync();
             return true;
         }

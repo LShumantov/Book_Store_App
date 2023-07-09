@@ -37,15 +37,15 @@
         [ProducesResponseType(400)]
         public async Task<IActionResult> GetAuthor(int authorId)
         {
-            if (!await _authorRepository.AuthorExists(authorId))
+            var author = _mapper.Map<AuthorDto>(await _authorRepository.GetAuthor(authorId));          
+            if (author == null)
             {
                 return NotFound();
             }
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
-            var author = _mapper.Map<AuthorDto>(await _authorRepository.GetAuthor(authorId));
+            }           
             return Ok(author);
         }
 
@@ -144,12 +144,12 @@
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
         public async Task<ActionResult> DeleteAuthor(int authorId)
-        {         
-            if (!await _authorRepository.AuthorExists(authorId))
+        {
+            var autorToDelete = await _authorRepository.GetAuthor(authorId);
+            if (autorToDelete == null)
             {
                 return NotFound();
-            }
-            var autorToDelete = await _authorRepository.GetAuthor(authorId);
+            }            
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

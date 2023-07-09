@@ -7,8 +7,8 @@
         public string Title { get; set; }
         public double Price { get; set; }     
         public int AutorId { get; set; }
-        public Author Autor { get; set; }
-        public ICollection<WareHouseBook> WareHouseBooks { get; set; }
-        public ICollection<ShoppingBasketBook> ShoppingBasketBooks { get; set; }
+        public virtual Author Autor { get; set; }
+        public virtual ICollection<WareHouseBook> WareHouseBooks { get; set; }
+        public virtual ICollection<ShoppingBasketBook> ShoppingBasketBooks { get; set; }
     }
 }

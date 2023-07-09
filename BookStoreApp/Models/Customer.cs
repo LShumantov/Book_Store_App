@@ -6,6 +6,6 @@
         public string Name { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-        public ICollection<ShoppingBasket> ShoppingBaskets { get; set; }
+        public virtual ICollection<ShoppingBasket> ShoppingBaskets { get; set; }
     }
 }

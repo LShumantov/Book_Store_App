@@ -36,15 +36,15 @@
         [ProducesResponseType(400)]
         public async Task<IActionResult> GetCustomer(int customerId)
         {
-            if (!await _customerRepository.CustomerExists(customerId))
+            var customer = _mapper.Map<CustomerDto>(await _customerRepository.GetCustomer(customerId));
+            if (customer == null)
             {
                 return NotFound();
             }              
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
-            var customer = _mapper.Map<CustomerDto>(await _customerRepository.GetCustomer(customerId));
+            }          
             return Ok(customer);
         }
 
@@ -142,13 +142,13 @@
         [ProducesResponseType(400)]
         [ProducesResponseType(204)]
         [ProducesResponseType(404)]
-        public async Task<ActionResult> DeleteAuthor(int customerId)
+        public async Task<ActionResult> DeleteCustomer(int customerId)
         {
-            if (!await _customerRepository.CustomerExists(customerId))
+            var customerToDelete = await _customerRepository.GetCustomer(customerId);
+            if (customerToDelete == null)
             {
                 return NotFound();
-            }
-            var customerToDelete = await _customerRepository.GetCustomer(customerId);
+            }          
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

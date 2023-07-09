@@ -18,7 +18,7 @@
         }
         public async Task<bool> CreateAuthor(Author author)
         {
-            _context.Add(author);
+            _context.AddAsync(author);
             await _context.SaveChangesAsync();
             return true;         
         }      

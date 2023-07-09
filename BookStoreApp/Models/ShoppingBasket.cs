@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public string Title { get; set; }
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
-        public ICollection<ShoppingBasketBook> ShoppingBasketBooks { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual ICollection<ShoppingBasketBook> ShoppingBasketBooks { get; set; }
     }
 }

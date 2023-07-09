@@ -140,11 +140,11 @@
         [ProducesResponseType(404)]
         public async Task<ActionResult> DeleteAuthor(int shoppingBasketId)
         {
-            if (!await _shoppingBasketRepository.ShoppingBasketExists(shoppingBasketId))
+            var shoppingBasketToDelete = await _shoppingBasketRepository.GetShoppingBasket(shoppingBasketId);
+            if (shoppingBasketToDelete == null)
             {
                 return NotFound();
-            }
-            var shoppingBasketToDelete = await _shoppingBasketRepository.GetShoppingBasket(shoppingBasketId);
+            }          
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);

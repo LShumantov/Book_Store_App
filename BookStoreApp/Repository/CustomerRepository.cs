@@ -14,7 +14,7 @@
         }
         public async Task<bool> CreateCustomer(Customer customer)
         {
-            _context.Add(customer);
+            _context.AddAsync(customer);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -24,7 +24,7 @@
         }
         public async Task<bool> DeleteCustomer(Customer customer)
         {
-          _context.Remove(customer);
+          _context.Remove(customer); 
             await _context.SaveChangesAsync();
             return true;
         }

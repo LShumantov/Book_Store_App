@@ -22,7 +22,7 @@
             {
                 for (int i = 0; i < 10; i++)
                 {
-                    dataBaseContext.Authors.Add(
+                    dataBaseContext.Authors.AddAsync(
                       new Author()
                       {
                           Name = "Lyubomir Shumantov",

@@ -132,7 +132,7 @@
         public async Task<ActionResult> DeleteWareHouse(int wareHouseId)
         {
             var wareHouseToDelete = await _wareHowseRepository.GetWareHouse(wareHouseId);
-            if (!await _wareHowseRepository.WareHouseExists(wareHouseId))
+            if (wareHouseToDelete == null)
             {
                 return NotFound();
             }

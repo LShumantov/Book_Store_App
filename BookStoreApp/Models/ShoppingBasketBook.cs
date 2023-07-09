@@ -4,7 +4,7 @@
     {
         public int ShopingBasketId { get; set; }
         public int BookId { get; set; }
-        public ShoppingBasket ShoppingBasket { get; set; }
-        public Book Book { get; set; }
+        public virtual ShoppingBasket ShoppingBasket { get; set; }
+        public virtual Book Book { get; set; }
     }
 }

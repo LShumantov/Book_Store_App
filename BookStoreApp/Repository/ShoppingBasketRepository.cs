@@ -33,7 +33,7 @@
         }
         public async Task<bool> CreateShoppingBasket(ShoppingBasket shoppingBasket)
         {
-            _context.Add(shoppingBasket);
+            _context.AddAsync(shoppingBasket);
             await _context.SaveChangesAsync();
             return true;
         }
